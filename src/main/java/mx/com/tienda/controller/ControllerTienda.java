@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import mx.com.tienda.app.ConsultaProductoApp;
@@ -37,7 +38,7 @@ public class ControllerTienda {
 	}
 	
 	@PostMapping("/productos")
-	public String insertaProductos(List<ProductosRequestVO> requesVo) {
+	public String insertaProductos(@RequestBody List<ProductosRequestVO> requesVo) {
 		return insertaProd.insertaProductos(requesVo);
 	}
 }
